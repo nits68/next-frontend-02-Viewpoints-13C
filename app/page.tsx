@@ -1,8 +1,6 @@
 "use client";
 
 import axios from "axios";
-import { get } from "http";
-import { Rss } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -52,7 +50,7 @@ export default function HomePage() {
           onChange={(e) => setSelectedLocation(e.target.value)}
         >
           {locations.map((e) => (
-            <option key={e.id}>{e.locationName}</option>
+            <option key={e.id} value={e.locationName}>{e.locationName}</option>
           ))}
         </select>
       </div>
