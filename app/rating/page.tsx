@@ -43,15 +43,16 @@ export default function RatingPage() {
         `A kilátó eddigi értékelése ${res.data.average}, ${res.data.count} látogató véleménye alapján.`,
       );
 
+      // Nem a feladat része: 5mp várakozás az oldalváltás előtt
       setTimeout(() => {
         router.push("/");
       }, 5000);
 
-      // router.push("/");
+      // router.push("/"); // Azonnal a főoldalra navigál
     } catch (error) {
       if (isAxiosError(error)) {
         toast.error(
-          `Hiba: ${error.response?.data.message || error.message || "Ismeretlen Axioa hiba!"}`,
+          `Hiba: ${error.response?.data.message || error.message || "Ismeretlen Axios hiba!"}`,
         );
       } else {
         toast.error((error as Error).message || "Ismeretlen hiba!");
